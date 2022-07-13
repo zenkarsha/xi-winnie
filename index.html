@@ -1,0 +1,45 @@
+<html xmlns:fb="http://ogp.me/ns/fb#" itemscope itemtype="http://schema.org/website" ng-app="memoryGameApp"><head>
+<title>席維尼對對碰</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width">
+<meta itemprop="name" content="席維尼對對碰">
+<meta itemprop="description" content="席維尼對對碰：偉哉我大習共慘帝國慶豐帝，將席維尼集滿並完成任務後，即可獲得神秘小驚喜唷！">
+<meta itemprop="image" content="https://xi-winnie.unlink.men/img/fb.png">
+
+<meta property="og:site_name" content="席維尼對對碰" />
+<meta property="og:title" content="席維尼對對碰" />
+<meta property="og:description" content="席維尼對對碰：偉哉我大習共慘帝國慶豐帝，將席維尼集滿並完成任務後，即可獲得神秘小驚喜唷！" />
+<meta property="og:url" content="https://xi-winnie.unlink.men/" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="//xi-winnie.unlink.men/img/fb.png?20190709" />
+
+<link rel="image_src" href="img/back.png?20190709" />
+<link rel="stylesheet" href="css/style.css?201404171750">
+<link rel="stylesheet" href="css/app.css">
+<link rel="Shortcut Icon" type="image/png" href="favicon.png">
+<script src="js/jquery.js"></script>
+<script src="lib/angular/angular.js"></script>
+<script src="js/app.js"></script>
+<script src="js/game.js?2019070902"></script>
+</head>
+<body ng-controller="GameCtrl">
+<header><h1>席維尼對對碰</h1></header>
+<div class="content">
+  <div class="dragon-left"></div>
+  <div class="dragon-right"></div>
+  <div class="message"><span class="blink_me">{{game.message}}</span></div>
+  <table>
+    <tr ng-repeat="row in game.grid">
+      <td ng-repeat="tile in row" ng-click="game.flipTile(tile)">
+        <div class="container">
+          <div class="card" ng-class="{flipped: tile.flipped}">
+              <img class="front" ng-src="img/back.png?20190709">
+              <img class="back" ng-src="img/{{tile.title}}.png?20190706">
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

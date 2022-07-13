@@ -1,0 +1,89 @@
+
+.container {
+  width: 130px;
+  height: 130px;
+  position: relative;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -ms-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+  margin: 2px;
+}
+.container img {
+
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform 300;
+  -moz-transition: -moz-transform 300;
+  -ms-transition: -ms-transform 300;
+  -o-transition: -o-transform 300;
+  transition: transform 300;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.card.flipped {
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -ms-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+.card img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+
+.card .back {
+  background: blue;
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -ms-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+.message {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  line-height: 40px;
+  font-size:28px;
+  z-index: 99000;
+  background: #7b0102;
+  padding: 10px 0;
+  color:white;
+}
+
+@media only screen and (max-width: 760px) {
+  .container {
+    width: 80px;
+    height: 80px;
+    margin: 1px;
+  }
+  .message {
+    font-size: 19px;
+  }
+}
